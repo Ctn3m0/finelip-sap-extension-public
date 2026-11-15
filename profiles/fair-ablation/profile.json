@@ -1,0 +1,48 @@
+{
+  "profile": "fair-ablation",
+  "paired_seeds": [71, 72, 73],
+  "shared_training": {
+    "gpus": 2,
+    "gpu_type": "A5000",
+    "physical_global_batch": 32,
+    "per_rank_batch": 16,
+    "accumulation_steps": 4,
+    "effective_batch": 128,
+    "epochs": 6,
+    "optimizer": "AdamW",
+    "learning_rate": 0.000001,
+    "cross_net_learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "warmup_length": 200,
+    "scheduler": "warmup_cosine",
+    "scheduler_mode": "optimizer_update",
+    "initialization": "identical pretrained CLIP checkpoint and FineLIP cross-net initialization per paired seed",
+    "dataset_split": "identical within each pair",
+    "preprocessing": "identical within each pair",
+    "dataloader": "identical construction and DistributedSampler epoch sequence within each pair"
+  },
+  "method_switch": {
+    "argument": "--use_sap",
+    "only_difference": true
+  },
+  "sap": {
+    "weight": 1.0,
+    "max_subcaptions": 15,
+    "merge_probability": 0.5,
+    "text_chunk_size": {
+      "ViT-B/16": 32,
+      "ViT-L/14": 4
+    }
+  },
+  "evaluation": {
+    "dataset": "flickr30k_karpathy_test_1k",
+    "modes": ["global", "finegrain_fused"],
+    "batch_size": 32,
+    "finegrain_chunk_size": 4,
+    "fusion": {
+      "global_weight": 0.8,
+      "finegrain_weight": 0.2
+    }
+  }
+}
+

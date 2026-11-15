@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "finelip_upstream": {
+    "url": "https://github.com/tiiuae/FineLIP",
+    "branch": "main",
+    "main_commit": "2118312c9d640c71904379e90129649a46e6f2dd",
+    "required_files_sha256": {
+      "model/model_finelip.py": "49022cd8b0666d6a767f6f8d590e59c3e0daebdb70ee9922d8a805c0e6635a3f",
+      "train/arguments.py": "80829f115b17c1053794735e1fea3495da4026a7b29b12b53f70751e6b4186d8",
+      "train/train.py": "b1a270ee3ee72ec4cf33200405bc5e2ea04262997122b3845720de99623f6c51"
+    },
+    "inspected_date": "2026-11-15",
+    "license_file_observed": false,
+    "observation": "The repository file listing exposed no LICENSE file at inspection time. This is a repository observation, not legal advice.",
+    "licensing_reference": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository"
+  },
+  "finelip_citation": {
+    "authors": ["Mothilal Asokan", "Kebin Wu", "Fatima Albreiki"],
+    "title": "FineLIP: Extending CLIP's Reach via Fine-Grained Alignment with Longer Text Inputs",
+    "venue": "Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)",
+    "year": 2025,
+    "pages": "14495-14504"
+  },
+  "mulclip_citation": {
+    "authors": ["Chau Truong", "Hieu Ta Quang", "Zhenzhen Liu", "Dung D. Le"],
+    "title": "MulCLIP: A Multi-level Alignment Framework for Enhancing Fine-grained Long-context CLIP",
+    "venue": "40th Conference on Neural Information Processing Systems (NeurIPS)",
+    "year": 2026,
+    "code_url": "https://github.com/truongchau2602/MulCLIP"
+  }
+}
+
